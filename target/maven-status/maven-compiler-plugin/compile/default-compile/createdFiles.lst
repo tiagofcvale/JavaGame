@@ -1,0 +1,16 @@
+com\example\main\Sound.class
+com\example\tile\Tile.class
+com\example\object\OBJ_Key.class
+com\example\object\OBJ_Door.class
+com\example\object\OBJ_Chest.class
+com\example\entity\Player.class
+com\example\main\UI.class
+com\example\tile\TileManager.class
+com\example\object\SuperObject.class
+com\example\main\AssetSetter.class
+com\example\main\ColisionChecker.class
+com\example\main\KeyHandler.class
+com\example\entity\Entity.class
+com\example\main\Main.class
+com\example\object\OBJ_Boots.class
+com\example\main\GamePanel.class
