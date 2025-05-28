@@ -16,7 +16,7 @@ import java.io.InputStream;
 
 public class UI {
     GamePanel gp;
-    Font f8514oem, arial_80B;
+    public Font f8514oem, arial_80B;
 //  BufferedImage keyImage;
     Graphics2D g2;
     public boolean messageOn = false;

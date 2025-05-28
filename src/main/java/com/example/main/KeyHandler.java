@@ -19,6 +19,15 @@ public class KeyHandler implements KeyListener{
     public void keyPressed(KeyEvent e) {
         int code = e.getKeyCode();
 
+        //Debug
+        if(code == KeyEvent.VK_T) {
+            if(checkDrawTime == false) {
+                checkDrawTime = true;
+            } else if (checkDrawTime == true) {
+                checkDrawTime = false;
+            }
+        }
+        
         //PlayState
         if (gp.gameState == gp.playState){
             if(code == KeyEvent.VK_W) {
@@ -53,14 +62,6 @@ public class KeyHandler implements KeyListener{
         else if(gp.gameState == gp.dialogueState){
             if(code ==  KeyEvent.VK_ENTER || code == KeyEvent.VK_ESCAPE || code == KeyEvent.VK_E){
                 gp.gameState = gp.playState;
-            }
-        }
-        //Debug
-        if(code == KeyEvent.VK_T) {
-            if(checkDrawTime == false) {
-                checkDrawTime = true;
-            } else if (checkDrawTime == true) {
-                checkDrawTime = false;
             }
         }
     }
