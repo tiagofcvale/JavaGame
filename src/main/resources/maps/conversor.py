@@ -1,6 +1,6 @@
 # Caminhos dos arquivos
 entrada = "C:\\Users\\tiago\\Desktop\\Projects\\javagame\\src\\main\\resources\\maps\\world01.txt"
-saida = "C:\\Users\\tiago\\Desktop\\Projects\\javagame\\src\\main\\resources\\maps\\world02.txt"
+saida = "C:\\Users\\tiago\\Desktop\\Projects\\javagame\\src\\main\\resources\\maps\\world03.txt"
 
 # Função para processar os números
 def processar_numero(numero):
