@@ -25,7 +25,7 @@ public class TileManager {
         mapTileNum = new int[gp.maxWorldCol][gp.maxWorldRow];
 
         getTileImage();
-        loadMap("/maps/world02.txt");
+        loadMap("/maps/world03.txt");
     }
 
     public void setup(int index, String imagePath, boolean collision){
