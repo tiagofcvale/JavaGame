@@ -47,14 +47,27 @@ public class Player extends Entity{
 
     public void getPlayerImage() {
         //load the player images
-        up1 = setup("/player/Walking_sprites/boy_up_1");
-        up2 = setup("/player/Walking_sprites/boy_up_2");
-        down1 = setup("/player/Walking_sprites/boy_down_1");
-        down2 = setup("/player/Walking_sprites/boy_down_2");
-        left1 = setup("/player/Walking_sprites/boy_left_1");
-        left2 = setup("/player/Walking_sprites/boy_left_2");
-        right1 = setup("/player/Walking_sprites/boy_right_1");
-        right2 = setup("/player/Walking_sprites/boy_right_2");
+        mati = setup("/player/Walking_sprites/boy_down_1");
+        tinho = setup("/player/Tinho/boy_down_1");
+        if (gp.playerSelect == 0){
+            up1 = setup("/player/Walking_sprites/boy_up_1");
+            up2 = setup("/player/Walking_sprites/boy_up_2");
+            down1 = setup("/player/Walking_sprites/boy_down_1");
+            down2 = setup("/player/Walking_sprites/boy_down_2");
+            left1 = setup("/player/Walking_sprites/boy_left_1");
+            left2 = setup("/player/Walking_sprites/boy_left_2");
+            right1 = setup("/player/Walking_sprites/boy_right_1");
+            right2 = setup("/player/Walking_sprites/boy_right_2");
+        } else if (gp.playerSelect == 1) {
+            up1 = setup("/player/Tinho/boy_up_1");
+            up2 = setup("/player/Tinho/boy_up_2");
+            down1 = setup("/player/Tinho/boy_down_1");
+            down2 = setup("/player/Tinho/boy_down_2");
+            left1 = setup("/player/Tinho/boy_left_1");
+            left2 = setup("/player/Tinho/boy_left_2");
+            right1 = setup("/player/Tinho/boy_right_1");
+            right2 = setup("/player/Tinho/boy_right_2");
+        }
     }
 
 

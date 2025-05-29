@@ -16,6 +16,7 @@ public class Entity {
     public int speed;
 
     public BufferedImage up1, up2, down1, down2, left1, left2, right1, right2; //images for the entity
+    public BufferedImage mati, tinho;
     public String direction;
 
     public int spriteCounter = 0; //counter for the sprite animation

@@ -25,7 +25,7 @@ public class UI {
     public boolean gameFinished = false;
     public String currentDialogue = "";
     public int commandNum = 0;
-
+    public int titleScreenState = 0; // 0: the first Screen, 1: Second Screen
 //  double playTime;
 //  DecimalFormat dFormat = new DecimalFormat("#0.00", DecimalFormatSymbols.getInstance(Locale.US));
 
@@ -82,53 +82,95 @@ public class UI {
 
     public void drawTitleScreen() {
         
-        g2.setColor(new Color(50,120,80));
-        g2.fillRect(0, 0, gp.screenWidth, gp.screenHeight);
+        if (titleScreenState == 0) {
+            g2.setColor(new Color(50,120,80));
+            g2.fillRect(0, 0, gp.screenWidth, gp.screenHeight);
 
-        //Title Name
-        g2.setFont(g2.getFont().deriveFont(Font.BOLD,58F));
-        String text = "Java Adventure Game"; //por agora
-        int x = getXforCenteredText(text);
-        int y = gp.tileSize * 3;
+            //Title Name
+            g2.setFont(g2.getFont().deriveFont(Font.BOLD,58F));
+            String text = "Java Adventure Game"; //por agora
+            int x = getXforCenteredText(text);
+            int y = gp.tileSize * 3;
 
-        //Shadow
-        g2.setColor(Color.black);
-        g2.drawString(text, x+5, y+5);
-        //Main Color
-        Color c = new Color(255,255,197);
-        g2.setColor(c);
-        g2.drawString(text, x, y);
+            //Shadow
+            g2.setColor(Color.black);
+            g2.drawString(text, x+5, y+5);
+            //Main Color
+            Color c = new Color(255,255,197);
+            g2.setColor(c);
+            g2.drawString(text, x, y);
 
-        //Mati Image
-        x = gp.screenWidth/2 - (gp.tileSize);
-        y += gp.tileSize*1.5;
-        g2.drawImage(gp.player.down1, x, y, gp.tileSize*2 ,gp.tileSize*2,null);
+            //Mati Image
+            x = gp.screenWidth/2 - (gp.tileSize);
+            y += gp.tileSize*1.5;
+            g2.drawImage(gp.player.down1, x, y, gp.tileSize*2 ,gp.tileSize*2,null);
 
-        //Menu
-        g2.setFont(g2.getFont().deriveFont(Font.BOLD,40F));
+            //Menu
+            g2.setFont(g2.getFont().deriveFont(Font.BOLD,40F));
 
-        text = "NEW GAME";
-        x = getXforCenteredText(text);
-        y += gp.tileSize*4;
-        g2.drawString(text, x, y);
-        if (commandNum == 0){
-            g2.drawString(">", x-gp.tileSize, y);
+            text = "NEW GAME";
+            x = getXforCenteredText(text);
+            y += gp.tileSize*4;
+            g2.drawString(text, x, y);
+            if (commandNum == 0){
+                g2.drawString(">", x-gp.tileSize, y);
+            }
+
+            text = "LOAD GAME";
+            x = getXforCenteredText(text);
+            y += gp.tileSize;
+            g2.drawString(text, x, y);
+            if (commandNum == 1){
+                g2.drawString(">", x-gp.tileSize, y);
+            }
+            
+            text = "QUIT";
+            x = getXforCenteredText(text);
+            y += gp.tileSize;
+            g2.drawString(text, x, y);
+            if (commandNum == 2){
+                g2.drawString(">", x-gp.tileSize, y);
+            }
         }
+        else if (titleScreenState == 1) {
 
-        text = "LOAD GAME";
-        x = getXforCenteredText(text);
-        y += gp.tileSize;
-        g2.drawString(text, x, y);
-        if (commandNum == 1){
-            g2.drawString(">", x-gp.tileSize, y);
-        }
-        
-        text = "QUIT";
-        x = getXforCenteredText(text);
-        y += gp.tileSize;
-        g2.drawString(text, x, y);
-        if (commandNum == 2){
-            g2.drawString(">", x-gp.tileSize, y);
+            //Class Selection Screen
+            g2.setColor(Color.white);
+            g2.setFont(g2.getFont().deriveFont(42F));
+
+            String text = "Select Your class!";
+            int x = getXforCenteredText(text);
+            int y = gp.tileSize*3;
+            g2.drawString(text, x, y);
+
+            text = "Mati";
+            x = gp.tileSize*4;
+            y += gp.tileSize*5;
+            g2.drawString(text, x, y);
+            if(commandNum == 0) {
+                g2.drawString(">", x-gp.tileSize, y);
+            }
+            //Mati Image
+            int dy = gp.tileSize*5;
+            g2.drawImage(gp.player.mati, x, dy, gp.tileSize*2 ,gp.tileSize*2,null);
+            
+            text = "Tinho";
+            x += gp.tileSize*5.5;
+            g2.drawString(text, x, y);
+            if(commandNum == 1) {
+                g2.drawString(">", x-gp.tileSize, y);
+            }
+            //Tinho Image
+            int dx = gp.tileSize * 11 - (gp.tileSize);
+            g2.drawImage(gp.player.tinho, dx, dy, gp.tileSize*2 ,gp.tileSize*2,null);
+
+            text = "Back";
+            x = getXforCenteredText(text);
+            y += gp.tileSize*3;
+            g2.drawString(text, x, y);
+            if(commandNum == 2) {
+                g2.drawString(">", x-gp.tileSize, y);
+            }
         }
     }
 
