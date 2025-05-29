@@ -28,6 +28,34 @@ public class KeyHandler implements KeyListener{
             }
         }
         
+        //TitleState
+        if(gp.gameState == gp.titleState){
+            if(code == KeyEvent.VK_UP) {
+                gp.ui.commandNum--;
+                if(gp.ui.commandNum <= -1){
+                    gp.ui.commandNum = 2;
+                }
+            }
+            if(code == KeyEvent.VK_DOWN) {
+                gp.ui.commandNum++;
+                if(gp.ui.commandNum >= 3){
+                    gp.ui.commandNum = 0;
+                }
+            }
+            //NEWGAME
+            if (code == KeyEvent.VK_ENTER && gp.ui.commandNum == 0) {
+                gp.gameState = gp.playState; //PlayState
+                gp.playMusic(0);
+            }
+            //LoadGame (not implemented)
+            if (code == KeyEvent.VK_ENTER && gp.ui.commandNum == 1) {
+                
+            }
+            if (code == KeyEvent.VK_ENTER && gp.ui.commandNum == 2) {
+                System.exit(0); //Quit
+            }
+        }
+
         //PlayState
         if (gp.gameState == gp.playState){
             if(code == KeyEvent.VK_W) {
