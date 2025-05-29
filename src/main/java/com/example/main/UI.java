@@ -133,12 +133,14 @@ public class UI {
             }
         }
         else if (titleScreenState == 1) {
+            g2.setColor(new Color(50,120,80));
+            g2.fillRect(0, 0, gp.screenWidth, gp.screenHeight);
 
             //Class Selection Screen
             g2.setColor(Color.white);
             g2.setFont(g2.getFont().deriveFont(42F));
 
-            String text = "Select Your class!";
+            String text = "Select Your character!";
             int x = getXforCenteredText(text);
             int y = gp.tileSize*3;
             g2.drawString(text, x, y);
