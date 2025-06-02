@@ -186,7 +186,8 @@ public class GamePanel extends JPanel implements Runnable {
             g2.setFont(ui.f8514oem.deriveFont(32F));
             g2.setColor(Color.white);
             g2.drawString("Draw Time: " + passed,10,400);
-            // System.out.println("Draw Time: " + passed);
+            g2.drawString("Player X: " + String.format("%.2f", player.worldX / (double)tileSize), 10, 440);
+            g2.drawString("Player Y: " + String.format("%.2f", player.worldY / (double)tileSize), 10, 480);
         }
         g2.dispose();
     }
